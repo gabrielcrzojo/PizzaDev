@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+# Segredos e configuração local
+.env
+.env.*
+!.env.example
+!.env.template
+.aws/
+
+# Banco de dados local
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+
+# Testes, análise e cobertura
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Build e distribuição
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Arquivos locais de editores e sistema
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.log
+
+# Frontend (Next.js / Node.js)
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+.vercel/

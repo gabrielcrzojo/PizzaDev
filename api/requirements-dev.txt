@@ -1,0 +1,5 @@
+-r requirements.txt
+
+# Verificação estática e testes HTTP, sem adicionar dependências à produção.
+httpx==0.28.1
+ruff==0.17.1
