@@ -1,70 +1,31 @@
 # Frontend do PizzaDev
 
-Base em Next.js com App Router, React, TypeScript estrito, Tailwind CSS e ESLint.
-Use Node.js 22.13 ou superior da linha 22 (`.nvmrc`) e npm 10 ou superior. O `package-lock.json` registra as
-versões instaladas e deve ser versionado.
-
-## Executar
-
-Dentro de `web/`:
+Protótipo em Next.js, React e TypeScript. Use Node.js 22.13+ da linha 22 e npm 10+.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Acesse <http://localhost:3000>. A página inicial é branca e intencionalmente vazia.
-Não há dependência da API, chamadas de rede de negócio, login ou dados simulados.
-Não é necessário criar um `.env` nesta etapa.
+Abra http://localhost:3000. Não requer API ou variáveis de ambiente.
 
-| Comando | Finalidade |
-| --- | --- |
-| `npm run dev` | Servidor de desenvolvimento |
-| `npm run lint` | ESLint, sem avisos permitidos |
-| `npm run typecheck` | Gera os tipos das rotas e verifica TypeScript |
-| `npm run build` | Build de produção |
-| `npm start` | Executa o build de produção |
-| `npm run check` | Lint, tipos e build em sequência |
+## Experiência
 
-## Organização
+- Página editorial responsiva, inspirada nos modelos fornecidos.
+- Animação inicial de entrada e rotação da pizza (1,4 s), repetível em “Mais uma fornada”. Respeita `prefers-reduced-motion`.
+- Filtros Todas, Clássicas e Especiais; três sabores demonstrativos.
+- Detalhe com tamanho, quantidade (1–20 por adição), preço calculado e informação de alérgenos.
+- Sacola em memória: agrega sabor/tamanho, permite remover itens e concluir uma simulação. Recarregar limpa a sacola. Nenhum pedido real é enviado.
+- Diálogos nativos com foco modal, fechamento por Escape e botões de fechar.
 
-```text
-src/
-└── app/
-    ├── page.tsx       # Página inicial: /
-    ├── globals.css
-    └── layout.tsx
-```
+## Arquivos
 
-A estrutura contém apenas arquivos utilizados. Crie pastas de funcionalidades,
-componentes compartilhados e integração HTTP quando houver implementação para elas.
-Use o alias `@/` para importar de `src/`. Rotas e layouts ficam em `app/`.
+`src/app/page.tsx`: catálogo e interações locais. `src/app/globals.css`: identidade visual, responsividade e animações. `public/images/`: três imagens geradas com ImageGen e README com os prompts completos.
 
-## Renderização e evolução
+## Validação
 
-A página inicial é um Server Component pré-renderizado no build. Não há
-`output: "export"`: a aplicação mantém a possibilidade de renderizar conteúdo
-dinâmico no servidor quando necessário. A execução de produção usa `next start`.
+`npm run check` executa ESLint, TypeScript e build de produção. `npm start` executa o build. Desenvolvimento e produção usam Webpack.
 
-Desenvolvimento e build usam Webpack, suportado pelo Next.js, para compatibilidade
-com ambientes que restringem as portas internas utilizadas pelo Turbopack.
+Para validar manualmente: filtre Especiais; abra um produto; altere tamanho e quantidade; adicione à sacola; confira subtotal; remova um item; conclua a demonstração; verifique o estado vazio. Confira também navegação por teclado e viewport móvel.
 
-Adicione `"use client"` somente aos componentes que precisarem de estado, eventos
-ou APIs do navegador. O CSS global já importa Tailwind; não há identidade visual
-definida e as fontes atuais são do sistema, sem download no build.
-
-Quando os fluxos forem implementados, introduza as dependências necessárias para
-consultas, carrinho e formulários. A integração HTTP será definida com base no
-contrato OpenAPI concluído do FastAPI. Preços, permissões e regras
-de pedidos permanecem sob responsabilidade da API. Segredos nunca devem usar
-o prefixo público `NEXT_PUBLIC_`.
-
-## Integração contínua
-
-O workflow `../.github/workflows/web.yml` instala com `npm ci` e executa
-`npm run check`. A verificação pode ser iniciada manualmente no GitHub Actions.
-Nenhum serviço de backend ou banco de dados é necessário para validar esta base.
-
-Referências: [instalação do Next.js](https://nextjs.org/docs/app/getting-started/installation),
-[ESLint](https://nextjs.org/docs/app/api-reference/config/eslint) e
-[Tailwind com Next.js](https://tailwindcss.com/docs/installation/framework-guides/nextjs).
+A integração futura deve usar preços e regras da API; os dados atuais são exclusivamente demonstrativos.

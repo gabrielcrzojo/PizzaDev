@@ -5,7 +5,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "PizzaDev",
-  description: "Aplicação de delivery de pizzas.",
+  description:
+    "PizzaDev — pizzas artesanais, fermentação lenta e ingredientes de verdade. Explore o cardápio demonstrativo.",
 };
 
 export default function RootLayout({

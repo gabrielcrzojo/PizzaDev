@@ -1,8 +1,7 @@
 # PizzaDev
 
-Aplicação de delivery de pizzas, com backend em FastAPI e base do frontend em Next.js, React, TypeScript
-e Tailwind CSS. A página inicial está intencionalmente vazia, pronta para evoluir
-para integração com a API. O backend implementa autenticação, catálogo e o ciclo
+Aplicação de delivery de pizzas, com backend em FastAPI e protótipo do frontend em Next.js, React, TypeScript
+e Tailwind CSS. A interface possui catálogo demonstrativo, detalhes dos produtos, sacola local e animação inicial. O backend implementa autenticação, catálogo e o ciclo
 completo de pedidos até a entrega, sem funcionalidades de pagamento.
 
 ## Estrutura
@@ -77,7 +76,7 @@ npm ci
 npm run dev
 ```
 
-Abra <http://localhost:3000>. Uma página branca é o resultado esperado.
+Abra <http://localhost:3000>. O protótipo abre com a apresentação animada e o cardápio. A sacola funciona em memória e é reiniciada ao recarregar; não envia pedidos à API.
 
 Para validar e executar a versão de produção:
 
