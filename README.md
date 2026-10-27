@@ -1,4 +1,4 @@
-# PizzaDev
+# PizzaDev(livery)
 
 Aplicação de delivery de pizzas, com backend em FastAPI e protótipo do frontend em Next.js, React, TypeScript
 e Tailwind CSS. A interface possui catálogo demonstrativo, detalhes dos produtos, sacola local e animação inicial. O backend implementa autenticação, catálogo e o ciclo
